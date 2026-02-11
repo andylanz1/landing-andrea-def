@@ -26,7 +26,7 @@ export default function FinalCTA() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-6xl font-heading font-bold leading-tight"
+                    className="text-4xl md:text-6xl lg:text-8xl font-heading font-black leading-[0.85] tracking-tighter uppercase italic"
                 >
                     Se hai bisogno di qualcuno che decide, <br />
                     <span className="text-gradient">parliamone.</span>

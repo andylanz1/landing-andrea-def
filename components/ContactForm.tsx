@@ -66,7 +66,7 @@ export default function ContactForm() {
                         Parliamo <br />
                         <span className="text-outline">del tuo</span> <br />
                         <span className="text-accent-1 italic">problema.</span>
-                    </h2>
+                    </motion.h2>
                     <p className="text-xl text-text-secondary font-medium border-l-4 border-white pl-8 py-4 uppercase tracking-tight">
                         Compila il form per richiedere una call esplorativa. <br />
                         Solo se hai un problema reale da risolvere.

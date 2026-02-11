@@ -32,7 +32,7 @@ export default function Process() {
     return (
         <SectionWrapper id="process" className="bg-primary relative">
             <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-heading font-bold">Come Funziona</h2>
+                <h2 className="text-6xl md:text-8xl lg:text-9xl font-heading font-black uppercase leading-[0.8] tracking-tighter italic">Come Funziona</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
@@ -48,7 +48,7 @@ export default function Process() {
                         transition={{ delay: index * 0.15 }}
                         className="relative bg-primary pt-4 text-center md:text-left"
                     >
-                        <div className="w-16 h-16 mx-auto md:mx-0 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 mb-6 relative z-10 glass-card">
+                        <div className="w-16 h-16 mx-auto md:mx-0 bg-white/5 rounded-none flex items-center justify-center border border-white/10 mb-6 relative z-10 glass-card">
                             {step.icon}
                         </div>
                         <h3 className="text-xl font-bold mb-3">{step.title}</h3>
