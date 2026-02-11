@@ -27,13 +27,13 @@ export default function Hero() {
                 >
                     <h1 className="flex flex-col items-center justify-center font-heading font-black leading-[0.85] tracking-tighter uppercase overflow-hidden">
                         <span className="text-accent-1 text-7xl md:text-9xl lg:text-[180px] xl:text-[220px]">
-                            Se vuoi
+                            Quando la
                         </span>
-                        <span className="text-outline text-7xl md:text-9xl lg:text-[180px] xl:text-[220px]">
-                            L'AI basta
+                        <span className="text-outline text-5xl md:text-7xl lg:text-[130px] xl:text-[160px]">
+                            complessità è alta,
                         </span>
                         <span className="text-white text-7xl md:text-9xl lg:text-[180px] xl:text-[220px]">
-                            TI SERVO IO
+                            ci sono io.
                         </span>
                     </h1>
 
