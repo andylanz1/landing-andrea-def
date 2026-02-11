@@ -54,111 +54,131 @@ export default function ContactForm() {
     }
 
     return (
-        <SectionWrapper id="contact-form" className="bg-primary-dark">
-            <Card className="max-w-2xl mx-auto border-t-4 border-t-accent-1">
-                <div className="text-center mb-10">
-                    <h3 className="text-2xl font-bold mb-2">Parliamo del Tuo Problema</h3>
-                    <p className="text-sm text-text-secondary">Compila il form per richiedere una call esplorativa.</p>
+        <SectionWrapper id="contact-form" className="bg-black border-t border-white/10 py-24">
+            <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <motion.h2
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="text-6xl md:text-8xl lg:text-9xl font-heading font-black uppercase leading-[0.8] tracking-tighter italic mb-8"
+                    >
+                        Parliamo <br />
+                        <span className="text-outline">del tuo</span> <br />
+                        <span className="text-accent-1 italic">problema.</span>
+                    </h2>
+                    <p className="text-xl text-text-secondary font-medium border-l-4 border-white pl-8 py-4 uppercase tracking-tight">
+                        Compila il form per richiedere una call esplorativa. <br />
+                        Solo se hai un problema reale da risolvere.
+                    </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-text-secondary flex items-center">
-                                <User className="w-4 h-4 mr-2" /> Nome
-                            </label>
-                            <input
-                                required
-                                type="text"
-                                className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-accent-1 focus:ring-1 focus:ring-accent-1 outline-none transition-colors"
-                                value={formState.name}
-                                onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-text-secondary flex items-center">
-                                <Mail className="w-4 h-4 mr-2" /> Email
-                            </label>
-                            <input
-                                required
-                                type="email"
-                                className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-accent-1 focus:ring-1 focus:ring-accent-1 outline-none transition-colors"
-                                value={formState.email}
-                                onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                            />
-                        </div>
-                    </div>
+                <div className="relative">
+                    <div className="absolute -inset-4 border-2 border-white/5 pointer-events-none" />
+                    <Card className="bg-zinc-900 border-4 border-white rounded-none p-10 shadow-[20px_20px_0px_var(--color-accent-1)]">
+                        <form onSubmit={handleSubmit} className="space-y-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="space-y-3">
+                                    <label className="text-sm font-black text-white uppercase tracking-widest flex items-center">
+                                        / NOME
+                                    </label>
+                                    <input
+                                        required
+                                        type="text"
+                                        className="w-full bg-black border-2 border-white/20 rounded-none p-4 text-white focus:border-accent-1 outline-none transition-colors font-bold uppercase"
+                                        value={formState.name}
+                                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                                    />
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-sm font-black text-white uppercase tracking-widest flex items-center">
+                                        / EMAIL
+                                    </label>
+                                    <input
+                                        required
+                                        type="email"
+                                        className="w-full bg-black border-2 border-white/20 rounded-none p-4 text-white focus:border-accent-1 outline-none transition-colors font-bold uppercase"
+                                        value={formState.email}
+                                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                                    />
+                                </div>
+                            </div>
 
-                    <div className="space-y-2">
-                        <label className="text-sm font-medium text-text-secondary flex items-center">
-                            <Building className="w-4 h-4 mr-2" /> Azienda / Ruolo (Opzionale)
-                        </label>
-                        <input
-                            type="text"
-                            className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-accent-1 focus:ring-1 focus:ring-accent-1 outline-none transition-colors"
-                            value={formState.company}
-                            onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                        />
-                    </div>
+                            <div className="space-y-3">
+                                <label className="text-sm font-black text-white uppercase tracking-widest flex items-center">
+                                    / AZIENDA (OPZIONALE)
+                                </label>
+                                <input
+                                    type="text"
+                                    className="w-full bg-black border-2 border-white/20 rounded-none p-4 text-white focus:border-accent-1 outline-none transition-colors font-bold uppercase"
+                                    value={formState.company}
+                                    onChange={(e) => setFormState({ ...formState, company: e.target.value })}
+                                />
+                            </div>
 
-                    <div className="space-y-2">
-                        <label className="text-sm font-medium text-text-secondary flex items-center">
-                            <HelpCircle className="w-4 h-4 mr-2" /> Qual è il problema reale?
-                        </label>
-                        <textarea
-                            required
-                            rows={4}
-                            placeholder="Non 'voglio più clienti'. Ma 'ho 3 sistemi che non parlano tra loro e sto perdendo dati critici'..."
-                            className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-accent-1 focus:ring-1 focus:ring-accent-1 outline-none transition-colors"
-                            value={formState.problem}
-                            onChange={(e) => setFormState({ ...formState, problem: e.target.value })}
-                        />
-                    </div>
+                            <div className="space-y-3">
+                                <label className="text-sm font-black text-white uppercase tracking-widest flex items-center">
+                                    / QUAL È IL PROBLEMA REALE?
+                                </label>
+                                <textarea
+                                    required
+                                    rows={4}
+                                    placeholder="NON 'VOGLIO PIÙ CLIENTI'. MA 'HO 3 SISTEMI CHE NON PARLANO TRA LORO'..."
+                                    className="w-full bg-black border-2 border-white/20 rounded-none p-4 text-white focus:border-accent-1 outline-none transition-colors font-bold uppercase placeholder:text-white/20"
+                                    value={formState.problem}
+                                    onChange={(e) => setFormState({ ...formState, problem: e.target.value })}
+                                />
+                            </div>
 
-                    <div className="space-y-2">
-                        <label className="text-sm font-medium text-text-secondary flex items-center">
-                            <DollarSign className="w-4 h-4 mr-2" /> Budget Indicativo
-                        </label>
-                        <select
-                            required
-                            className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-accent-1 focus:ring-1 focus:ring-accent-1 outline-none transition-colors appearance-none"
-                            value={formState.budget}
-                            onChange={(e) => setFormState({ ...formState, budget: e.target.value })}
-                        >
-                            <option value="" className="bg-primary-dark text-gray-500">Seleziona un range...</option>
-                            <option value="<5k" className="bg-primary-dark">Men o di €5.000</option>
-                            <option value="5k-15k" className="bg-primary-dark">€5.000 - €15.000</option>
-                            <option value="15k-50k" className="bg-primary-dark">€15.000 - €50.000</option>
-                            <option value=">50k" className="bg-primary-dark">Oltre €50.000</option>
-                            <option value="TBD" className="bg-primary-dark">Da discutere</option>
-                        </select>
-                    </div>
+                            <div className="space-y-3">
+                                <label className="text-sm font-black text-white uppercase tracking-widest flex items-center">
+                                    / BUDGET INDICATIVO
+                                </label>
+                                <div className="relative">
+                                    <select
+                                        required
+                                        className="w-full bg-black border-2 border-white/20 rounded-none p-4 text-white focus:border-accent-1 outline-none transition-colors appearance-none font-black uppercase"
+                                        value={formState.budget}
+                                        onChange={(e) => setFormState({ ...formState, budget: e.target.value })}
+                                    >
+                                        <option value="" className="bg-black text-white/20">Seleziona un range...</option>
+                                        <option value="<5k" className="bg-black text-white">Meno di €5.000</option>
+                                        <option value="5k-15k" className="bg-black text-white">€5.000 - €15.000</option>
+                                        <option value="15k-50k" className="bg-black text-white">€15.000 - €50.000</option>
+                                        <option value=">50k" className="bg-black text-white">Oltre €50.000</option>
+                                        <option value="TBD" className="bg-black text-white">Da discutere</option>
+                                    </select>
+                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-accent-1">▼</div>
+                                </div>
+                            </div>
 
-                    <div className="flex items-center space-x-3 pt-4">
-                        <input
-                            required
-                            type="checkbox"
-                            id="privacy"
-                            className="w-5 h-5 rounded border-white/20 bg-white/5 text-accent-1 focus:ring-accent-1 focus:ring-offset-primary-dark"
-                            checked={formState.privacy}
-                            onChange={(e) => setFormState({ ...formState, privacy: e.target.checked })}
-                        />
-                        <label htmlFor="privacy" className="text-sm text-text-secondary">
-                            Accetto la Privacy Policy e il trattamento dei dati.
-                        </label>
-                    </div>
+                            <div className="flex items-center space-x-4 pt-4">
+                                <input
+                                    required
+                                    type="checkbox"
+                                    id="privacy"
+                                    className="w-6 h-6 rounded-none border-2 border-white/20 bg-black text-accent-1 focus:ring-accent-1"
+                                    checked={formState.privacy}
+                                    onChange={(e) => setFormState({ ...formState, privacy: e.target.checked })}
+                                />
+                                <label htmlFor="privacy" className="text-xs font-bold text-white/60 uppercase tracking-tighter">
+                                    Accetto la Privacy Policy e il trattamento dei dati.
+                                </label>
+                            </div>
 
-                    <Button
-                        type="submit"
-                        size="lg"
-                        className="w-full mt-6"
-                        isLoading={isSubmitting}
-                        disabled={!formState.privacy}
-                    >
-                        Invia Richiesta
-                    </Button>
-                </form>
-            </Card>
+                            <Button
+                                type="submit"
+                                size="lg"
+                                className="w-full h-20 text-2xl"
+                                isLoading={isSubmitting}
+                                disabled={!formState.privacy}
+                            >
+                                START THE PROJECT →
+                            </Button>
+                        </form>
+                    </Card>
+                </div>
+            </div>
         </SectionWrapper>
     );
 }

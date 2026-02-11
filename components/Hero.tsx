@@ -15,63 +15,49 @@ export default function Hero() {
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary px-4 sm:px-6 lg:px-8">
-            {/* Background Gradient Mesh */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-                <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary-light/30 rounded-full blur-[120px] animate-float opacity-60" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-accent-2/20 rounded-full blur-[120px] animate-float opacity-50" style={{ animationDelay: "2s" }} />
-                <div className="absolute top-[30%] left-[60%] w-[30%] h-[30%] bg-accent-1/20 rounded-full blur-[100px] animate-float opacity-40" style={{ animationDelay: "4s" }} />
-            </div>
+            {/* Background Grid Overlay */}
+            <div className="absolute inset-0 z-0 bg-[url('/grid.svg')] bg-center opacity-10" />
 
-            {/* Grid Pattern Overlay */}
-            <div className="absolute inset-0 z-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-
-            <div className="relative z-10 max-w-4xl mx-auto text-center space-y-10">
+            <div className="relative z-10 w-full max-w-7xl mx-auto text-center px-4">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="space-y-6"
+                    className="space-y-12"
                 >
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight tracking-tight">
-                        <span className="block text-white mb-2">
-                            Se vuoi qualcuno che esegue, <br className="hidden md:block" />
-                            l'AI basta.
+                    <h1 className="flex flex-col items-center justify-center font-heading font-black leading-[0.85] tracking-tighter uppercase overflow-hidden">
+                        <span className="text-accent-1 text-7xl md:text-9xl lg:text-[180px] xl:text-[220px]">
+                            Se vuoi
                         </span>
-                        <span className="text-gradient block">
-                            Se vuoi qualcuno che decide, <br className="hidden md:block" />
-                            ti servo io.
+                        <span className="text-outline text-7xl md:text-9xl lg:text-[180px] xl:text-[220px]">
+                            L'AI basta
+                        </span>
+                        <span className="text-white text-7xl md:text-9xl lg:text-[180px] xl:text-[220px]">
+                            TI SERVO IO
                         </span>
                     </h1>
 
-                    <p className="max-w-2xl mx-auto text-lg md:text-xl text-text-secondary leading-relaxed">
-                        Non vendo ore. Non vendo task. <br />
-                        Mi prendo la responsabilità delle decisioni quando il contesto è confuso,
-                        i sistemi sono fragili e l'errore costa caro.
-                    </p>
+                    <div className="max-w-2xl mx-auto space-y-8">
+                        <p className="text-xl md:text-2xl text-text-secondary font-medium tracking-tight border-l-4 border-accent-1 pl-6 py-2 text-left">
+                            Non vendo ore. Non vendo task. <br />
+                            Mi prendo la responsabilità delle decisioni quando il contesto è confuso,
+                            i sistemi sono fragili e l'errore costa caro.
+                        </p>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        className="font-medium text-accent-1"
-                    >
-                        👉 Questo non è per tutti.
-                    </motion.div>
-                </motion.div>
+                        <div className="flex flex-col md:flex-row items-center gap-6 pt-4">
+                            <Button
+                                size="lg"
+                                onClick={scrollToForm}
+                                className="group w-full md:w-auto h-20 text-xl px-12"
+                            >
+                                START THE ENGINE →
+                            </Button>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                >
-                    <Button
-                        size="lg"
-                        onClick={scrollToForm}
-                        rightIcon={<ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
-                        className="group text-lg px-10 py-6 h-auto"
-                    >
-                        Richiedi una Call Esplorativa
-                    </Button>
+                            <p className="text-accent-1 font-bold tracking-widest text-sm uppercase">
+                                👉 Questo non è per tutti.
+                            </p>
+                        </div>
+                    </div>
                 </motion.div>
             </div>
 

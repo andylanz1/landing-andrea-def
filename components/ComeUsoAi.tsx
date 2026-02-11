@@ -7,73 +7,72 @@ import { Bot, BrainCircuit, Sparkles } from "lucide-react";
 
 export default function ComeUsoAI() {
     return (
-        <SectionWrapper id="ai-usage" className="bg-primary-dark relative overflow-hidden">
-            {/* Background Network Animation Placeholder */}
-            <div className="absolute inset-0 z-0 opacity-10">
-                <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(0,217,255,0.1)_0,transparent_70%)]" />
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <SectionWrapper id="ai-usage" className="bg-black border-b border-white/10 px-0 sm:px-0 lg:px-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:divide-x divide-white/10 border-y border-white/10">
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    className="p-12 lg:p-24"
                 >
-                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8">
+                    <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black uppercase leading-[0.85] tracking-tighter mb-12 italic">
                         Sì, uso l'AI. <br />
-                        <span className="text-gradient">Ovunque sia utile.</span>
+                        <span className="text-outline">Ovunque</span> <br />
+                        sia utile.
                     </h2>
 
-                    <div className="space-y-6 text-lg text-text-secondary">
-                        <p>
+                    <div className="space-y-8 text-xl text-text-secondary font-medium">
+                        <p className="text-white font-bold text-2xl uppercase tracking-tight">
                             Non ti faccio pagare l'AI. Ti faccio pagare le decisioni che prendo usando l'AI.
                         </p>
-                        <ul className="space-y-4 mt-6">
+                        <ul className="space-y-6 mt-8">
                             {[
                                 "Accelerare analisi che richiederebbero giorni",
                                 "Simulare scenari prima di prendere decisioni",
                                 "Stressare le ipotesi per trovare punti deboli",
                                 "Ridurre il costo dell'errore (test virtuali)"
                             ].map((item, i) => (
-                                <li key={i} className="flex items-center text-white/90">
-                                    <Sparkles className="w-5 h-5 text-accent-1 mr-3" />
+                                <li key={i} className="flex items-start text-white/80 border-b border-white/5 pb-4">
+                                    <span className="text-accent-1 mr-4 font-black">/ 0{i + 1}</span>
                                     {item}
                                 </li>
                             ))}
                         </ul>
 
-                        <div className="mt-8 p-6 bg-white/5 rounded-xl border border-white/10">
-                            <p className="font-semibold text-white mb-2">💡 La differenza:</p>
-                            <p>L'AI suggerisce 10 opzioni. Io scelgo l'unica che funziona nel tuo contesto specifico.</p>
+                        <div className="mt-12 p-10 bg-accent-1 text-black rounded-none">
+                            <p className="font-black text-xl uppercase mb-4 italic">💡 La differenza:</p>
+                            <p className="font-black text-2xl leading-tight uppercase tracking-tight">L'AI suggerisce 10 opzioni. Io scelgo l'unica che funziona nel tuo contesto specifico.</p>
                         </div>
                     </div>
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative"
+                    className="relative flex items-center justify-center bg-zinc-900 border-t lg:border-t-0 border-white/10 p-12 lg:p-24"
                 >
-                    <div className="aspect-square relative flex items-center justify-center">
-                        {/* Abstract visualization of AI + Human */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-accent-1/20 to-accent-2/20 rounded-full blur-3xl animate-pulse" />
-                        <div className="relative z-10 glass p-10 rounded-2xl border-accent-1/30">
-                            <div className="flex items-center justify-center space-x-8 mb-8">
-                                <div className="text-center">
-                                    <Bot className="w-16 h-16 text-accent-1 mx-auto mb-2" />
-                                    <span className="text-sm font-mono text-accent-1">AI PROPOSES</span>
+                    {/* Abstract industrial visualization */}
+                    <div className="absolute inset-0 opacity-20 bg-[url('/grid.svg')] bg-[length:50px_50px]" />
+
+                    <div className="relative z-10 w-full max-w-md">
+                        <div className="border-4 border-white p-12 bg-black shadow-[20px_20px_0px_var(--color-accent-1)]">
+                            <div className="flex flex-col space-y-12">
+                                <div className="text-left border-l-4 border-accent-1 pl-6">
+                                    <Bot className="w-16 h-16 text-accent-1 mb-4" />
+                                    <span className="text-2xl font-heading font-black text-white uppercase italic">AI PROPOSES</span>
+                                    <p className="text-sm font-mono text-text-secondary mt-2">MULTIPLE SCENARIOS & MODELS</p>
                                 </div>
-                                <div className="h-0.5 w-16 bg-white/20" />
-                                <div className="text-center">
-                                    <BrainCircuit className="w-16 h-16 text-accent-2 mx-auto mb-2" />
-                                    <span className="text-sm font-mono text-accent-2">I DECIDE</span>
+
+                                <div className="h-0.5 w-full bg-white/20 relative">
+                                    <div className="absolute -top-2 left-1/2 -ml-2 w-4 h-4 bg-accent-1 rotate-45" />
                                 </div>
-                            </div>
-                            <div className="text-center text-white/80 font-mono text-sm">
-                                {`{ "inputs": ["Data", "Trends", "Models"], "output": "Strategy" }`}
+
+                                <div className="text-right border-r-4 border-white pr-6">
+                                    <BrainCircuit className="w-16 h-16 text-white mb-4 ml-auto" />
+                                    <span className="text-2xl font-heading font-black text-white uppercase italic">I DECIDE</span>
+                                    <p className="text-sm font-mono text-text-secondary mt-2">STRATEGIC JUDGMENT & CONTROL</p>
+                                </div>
                             </div>
                         </div>
                     </div>

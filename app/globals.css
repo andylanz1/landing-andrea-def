@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-space-grotesk);
+  --font-sans: var(--font-archivo);
+  --font-heading: var(--font-anton);
   --font-mono: var(--font-jetbrains-mono);
 
-  --color-primary: #0a192f;
-  --color-primary-dark: #050d18;
-  --color-primary-light: #1a365d;
+  --color-primary: #000000;
+  --color-primary-dark: #000000;
+  --color-primary-light: #111111;
 
-  --color-accent-1: #00d9ff;
-  --color-accent-2: #7b2cbf;
+  --color-accent-1: #ff4d00;
+  --color-accent-2: #ff4d00;
 
   --color-text-primary: #ffffff;
-  --color-text-secondary: #8892b0;
+  --color-text-secondary: #a1a1a1;
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 2s infinite;
@@ -43,40 +43,49 @@
   }
 }
 
-/* Glass-morphism Utilities */
+/* Sharp Industrial UI Elements */
 @utility glass {
-  background: rgba(10, 25, 47, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 15, 15, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .glass-card {
-  @apply glass rounded-xl transition-all duration-300;
+  @apply glass rounded-none transition-all duration-300;
 }
 
 .glass-card:hover {
-  background: rgba(10, 25, 47, 0.85);
-  border-color: rgba(0, 217, 255, 0.3);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  background: rgba(20, 20, 20, 0.95);
+  border-color: var(--color-accent-1);
+  transform: translateY(-2px);
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #00d9ff 0%, #7b2cbf 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-accent-1);
+  /* Solid orange for better readability in this style */
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, #00d9ff 0%, #7b2cbf 100%);
-  color: white;
-  font-weight: 600;
+  background: var(--color-accent-1);
+  color: black;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  border-radius: 0;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: white;
+  color: black;
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0px white;
 }
 
 .btn-primary:hover {

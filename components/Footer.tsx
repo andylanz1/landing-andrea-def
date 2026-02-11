@@ -10,66 +10,68 @@ export default function Footer() {
     };
 
     return (
-        <footer className="bg-black py-16 px-4 border-t border-white/10 relative overflow-hidden">
-            {/* Stars Animation Placeholder */}
-            <div className="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-                <div>
-                    <h4 className="text-xl font-bold text-white mb-2">Andrea Lanzone</h4>
-                    <p className="text-text-secondary text-sm">
-                        Via G. Marconi 24<br />
-                        20090 Trezzano sul Naviglio (MI), IT<br />
-                        P.IVA 13967810964
+        <footer className="bg-black py-24 px-4 border-t-8 border-accent-1 relative overflow-hidden">
+            <div className="container mx-auto max-w-7xl">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
+                    <div>
+                        <h4 className="text-4xl font-heading font-black text-white mb-6 uppercase italic tracking-tighter">Andrea <br />Lanzone</h4>
+                        <p className="text-text-secondary text-sm font-bold uppercase tracking-widest leading-relaxed">
+                            Via G. Marconi 24<br />
+                            20090 Trezzano sul Naviglio (MI), IT<br />
+                            P.IVA 13967810964
+                        </p>
+                    </div>
+
+                    <div className="flex flex-col space-y-4">
+                        <h5 className="text-xs font-black text-accent-1 uppercase tracking-[0.3em] mb-4">/ CONTACTS</h5>
+                        <a href="mailto:info@andrealanzone.it" className="text-2xl font-heading font-black text-white hover:text-accent-1 transition-colors uppercase italic tracking-tighter">info@andrealanzone.it</a>
+                        <a href="https://www.linkedin.com/in/andrea-lanzone-marketing/" target="_blank" rel="noopener noreferrer" className="text-2xl font-heading font-black text-white hover:text-accent-1 transition-colors uppercase italic tracking-tighter">LinkedIn</a>
+                    </div>
+
+                    <div className="text-xs text-text-secondary font-bold uppercase tracking-widest leading-loose">
+                        <h5 className="text-xs font-black text-accent-1 uppercase tracking-[0.3em] mb-4">/ LEGAL</h5>
+                        <p>© 2026 Andrea Lanzone. All rights reserved.</p>
+                        <div className="mt-4 flex flex-col space-y-2">
+                            <a
+                                href="https://www.iubenda.com/privacy-policy/54151139"
+                                className="hover:text-white transition-colors border-b border-white/10 w-fit"
+                            >
+                                Privacy Policy
+                            </a>
+                            <a
+                                href="https://www.iubenda.com/privacy-policy/54151139/cookie-policy"
+                                className="hover:text-white transition-colors border-b border-white/10 w-fit"
+                            >
+                                Cookie Policy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className="mt-24 pt-24 border-t border-white/10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <p className="text-3xl md:text-5xl font-heading font-black italic text-white/20 uppercase leading-none tracking-tighter">
+                        "L'AI accelera tutto. <br />
+                        Anche gli errori. <br />
+                        Io servo a evitarli."
                     </p>
-                </div>
-
-                <div className="space-y-2 text-sm text-text-secondary">
-                    <p>Email: <a href="mailto:info@andrealanzone.it" className="hover:text-accent-1 transition-colors">info@andrealanzone.it</a></p>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/andrea-lanzone-marketing/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-1 transition-colors">andrea-lanzone-marketing</a></p>
-                </div>
-
-                <div className="text-xs text-text-secondary opacity-60">
-                    <p>© 2026 Andrea Lanzone. Tutti i diritti riservati.</p>
-                    <div className="mt-2 space-x-4">
-                        <a
-                            href="https://www.iubenda.com/privacy-policy/54151139"
-                            className="iubenda-black no-brand iubenda-noiframe iubenda-embed hover:text-white transition-colors"
-                            title="Privacy Policy"
-                        >
-                            Privacy Policy
-                        </a>
-                        <span>|</span>
-                        <a
-                            href="https://www.iubenda.com/privacy-policy/54151139/cookie-policy"
-                            className="iubenda-black no-brand iubenda-noiframe iubenda-embed hover:text-white transition-colors"
-                            title="Cookie Policy"
-                        >
-                            Cookie Policy
-                        </a>
-                        <span>|</span>
-                        <span>P.IVA: 13967810964</span>
+                    <div className="flex justify-end lg:justify-end">
+                        <img
+                            src="/images/firma-andrea-lanzone.png"
+                            alt="Firma Andrea Lanzone"
+                            className="w-72 opacity-50 invert brightness-200"
+                        />
                     </div>
                 </div>
             </div>
 
 
-            <div className="mt-16 text-center max-w-lg mx-auto">
-                <p className="text-sm italic text-white/40 mb-6">
-                    "L'AI accelera tutto. Anche gli errori. Io servo a evitare quelli che non ti puoi permettere."
-                </p>
-                <img
-                    src="/images/firma-andrea-lanzone.png"
-                    alt="Firma Andrea Lanzone"
-                    className="mx-auto w-64 opacity-70 invert"
-                />
-            </div>
-
-
             <button
                 onClick={scrollToTop}
-                className="fixed bottom-8 right-8 p-3 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors z-50 backdrop-blur-sm"
+                className="fixed bottom-8 right-8 w-16 h-16 bg-accent-1 text-black flex items-center justify-center hover:bg-white transition-colors z-50 shadow-[5px_5px_0px_white]"
                 aria-label="Back to top"
             >
-                <ArrowUp className="w-5 h-5" />
+                <ArrowUp className="w-8 h-8 font-black" />
             </button>
         </footer>
     );

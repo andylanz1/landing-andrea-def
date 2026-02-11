@@ -24,52 +24,48 @@ const notForYou = [
 
 export default function Target() {
     return (
-        <SectionWrapper id="target" className="bg-primary-dark">
-            <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-heading font-bold">
-                    È per te se... <br />
-                    <span className="text-text-secondary text-2xl md:text-4xl">/ Non è per te se...</span>
-                </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <SectionWrapper id="target" className="bg-black border-b border-white/10 px-0 sm:px-0 lg:px-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:divide-x divide-white/10 border-y border-white/10">
                 {/* For You */}
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
+                    className="p-12 lg:p-24 bg-black group transition-colors duration-500 hover:bg-zinc-900 border-b lg:border-b-0 border-white/10"
                 >
-                    <Card className="h-full border-green-500/20 bg-green-500/5">
-                        <h3 className="text-2xl font-bold mb-6 text-green-400">✅ È per te se:</h3>
-                        <ul className="space-y-4">
-                            {forYou.map((item, i) => (
-                                <li key={i} className="flex items-start text-white/90">
-                                    <Check className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </Card>
+                    <h2 className="text-5xl md:text-7xl font-heading font-black uppercase leading-[0.85] tracking-tighter mb-12 italic">
+                        È per te <br />
+                        <span className="text-accent-1">se...</span>
+                    </h2>
+                    <ul className="space-y-8">
+                        {forYou.map((item, i) => (
+                            <li key={i} className="flex items-start text-white text-xl md:text-2xl font-black uppercase tracking-tight">
+                                <span className="w-10 h-10 border-4 border-accent-1 text-accent-1 flex items-center justify-center mr-6 shrink-0 italic">✓</span>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
                 </motion.div>
 
                 {/* Not For You */}
                 <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
+                    className="p-12 lg:p-24 bg-white"
                 >
-                    <Card className="h-full border-red-500/20 bg-red-500/5">
-                        <h3 className="text-2xl font-bold mb-6 text-red-400">❌ Non è per te se:</h3>
-                        <ul className="space-y-4">
-                            {notForYou.map((item, i) => (
-                                <li key={i} className="flex items-start text-text-secondary">
-                                    <X className="w-5 h-5 text-red-500 mr-3 mt-1 shrink-0" />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </Card>
+                    <h2 className="text-5xl md:text-7xl font-heading font-black uppercase leading-[0.85] tracking-tighter mb-12 italic text-black">
+                        NON è <br />
+                        <span className="text-accent-1">per te se...</span>
+                    </h2>
+                    <ul className="space-y-8">
+                        {notForYou.map((item, i) => (
+                            <li key={i} className="flex items-start text-black/40 text-xl font-bold uppercase tracking-tight line-through decoration-black/20">
+                                <span className="w-10 h-10 bg-black text-white flex items-center justify-center mr-6 shrink-0 italic">✗</span>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
                 </motion.div>
             </div>
         </SectionWrapper>

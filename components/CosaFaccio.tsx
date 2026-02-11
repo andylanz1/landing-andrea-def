@@ -25,84 +25,76 @@ const dos = [
 
 export default function CosaFaccio() {
     return (
-        <SectionWrapper id="what-i-do" className="bg-primary relative overflow-hidden">
-            {/* Background Gradients */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-                <div className="absolute top-1/2 left-[-10%] w-[40%] h-[40%] bg-red-500/5 rounded-full blur-[100px]" />
-                <div className="absolute top-1/2 right-[-10%] w-[40%] h-[40%] bg-green-500/5 rounded-full blur-[100px]" />
-            </div>
+        <SectionWrapper id="what-i-do" className="bg-black border-b border-white/10 px-0 sm:px-0 lg:px-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-white/10 border-y border-white/10">
+                {/* Header Block (Mobile Only or spans both on large) */}
+                <div className="lg:col-span-2 p-12 lg:p-24 border-b border-white/10 bg-primary-light/5">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-6xl md:text-8xl lg:text-9xl font-heading font-black uppercase leading-[0.8] tracking-tighter italic"
+                    >
+                        Quello che <br />
+                        <span className="text-accent-1">faccio</span> <br />
+                        <span className="text-outline text-4xl md:text-6xl lg:text-7xl block mt-4">(e quello che no)</span>
+                    </motion.h2>
+                </div>
 
-            <div className="relative z-10 text-center mb-16">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-3xl md:text-5xl font-heading font-bold"
-                >
-                    Quello che faccio <br />
-                    <span className="text-text-secondary text-2xl md:text-4xl">(e quello che non faccio)</span>
-                </motion.h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                 {/* What I DON'T Do */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    className="p-12 lg:p-24 bg-black group transition-colors duration-500 hover:bg-zinc-900"
                 >
-                    <Card className="h-full border-red-500/20 hover:border-red-500/50 bg-red-500/5">
-                        <h3 className="text-2xl font-bold mb-8 flex items-center text-red-400">
-                            <XCircle className="mr-3 w-6 h-6" />
-                            Cosa NON faccio
-                        </h3>
-                        <ul className="space-y-6">
-                            {donts.map((item, index) => (
-                                <motion.li
-                                    key={index}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="flex items-start text-text-secondary"
-                                >
-                                    <span className="text-red-500/50 mr-3 mt-1">✗</span>
-                                    {item}
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </Card>
+                    <h3 className="text-3xl font-heading font-black uppercase mb-12 flex items-center text-white italic">
+                        <span className="w-12 h-12 bg-white text-black flex items-center justify-center mr-4 not-italic">✗</span>
+                        Cosa NON faccio
+                    </h3>
+                    <ul className="space-y-8">
+                        {donts.map((item, index) => (
+                            <motion.li
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="flex items-start text-text-secondary text-lg md:text-xl font-medium"
+                            >
+                                <span className="text-accent-1 mr-4 mt-1">/</span>
+                                {item}
+                            </motion.li>
+                        ))}
+                    </ul>
                 </motion.div>
 
                 {/* What I Do */}
                 <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    className="p-12 lg:p-24 bg-accent-1"
                 >
-                    <Card className="h-full border-green-500/20 hover:border-green-500/50 bg-green-500/5">
-                        <h3 className="text-2xl font-bold mb-8 flex items-center text-green-400">
-                            <CheckCircle2 className="mr-3 w-6 h-6" />
-                            Cosa faccio
-                        </h3>
-                        <ul className="space-y-6">
-                            {dos.map((item, index) => (
-                                <motion.li
-                                    key={index}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="flex items-start text-white"
-                                >
-                                    <span className="text-green-500 mr-3 mt-1">✓</span>
-                                    {item}
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </Card>
+                    <h3 className="text-3xl font-heading font-black uppercase mb-12 flex items-center text-black italic">
+                        <span className="w-12 h-12 bg-black text-accent-1 flex items-center justify-center mr-4 not-italic">✓</span>
+                        Cosa faccio
+                    </h3>
+                    <ul className="space-y-8">
+                        {dos.map((item, index) => (
+                            <motion.li
+                                key={index}
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="flex items-start text-black text-lg md:text-xl font-black uppercase tracking-tight"
+                            >
+                                <span className="text-black/40 mr-4 mt-1">/</span>
+                                {item}
+                            </motion.li>
+                        ))}
+                    </ul>
                 </motion.div>
             </div>
         </SectionWrapper>
