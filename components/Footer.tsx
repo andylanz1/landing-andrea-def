@@ -16,29 +16,53 @@ export default function Footer() {
                 <div>
                     <h4 className="text-xl font-bold text-white mb-2">Andrea Lanzone</h4>
                     <p className="text-text-secondary text-sm">
-                        Consulenza Strategica e Decisionale <br />
-                        Milano, Italia
+                        Via G. Marconi 24<br />
+                        20090 Trezzano sul Naviglio (MI), IT<br />
+                        P.IVA 13967810964
                     </p>
                 </div>
 
                 <div className="space-y-2 text-sm text-text-secondary">
-                    <p>Email: contact@andrealanzone.com</p>
-                    <p>LinkedIn: <a href="#" className="hover:text-accent-1 transition-colors">/in/andrealanzone</a></p>
+                    <p>Email: <a href="mailto:info@andrealanzone.it" className="hover:text-accent-1 transition-colors">info@andrealanzone.it</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/andrea-lanzone-marketing/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-1 transition-colors">andrea-lanzone-marketing</a></p>
                 </div>
 
                 <div className="text-xs text-text-secondary opacity-60">
                     <p>© 2026 Andrea Lanzone. Tutti i diritti riservati.</p>
                     <div className="mt-2 space-x-4">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                        <a
+                            href="https://www.iubenda.com/privacy-policy/54151139"
+                            className="iubenda-black no-brand iubenda-noiframe iubenda-embed hover:text-white transition-colors"
+                            title="Privacy Policy"
+                        >
+                            Privacy Policy
+                        </a>
                         <span>|</span>
-                        <span>P.IVA: XXXXXXXXXXX</span>
+                        <a
+                            href="https://www.iubenda.com/privacy-policy/54151139/cookie-policy"
+                            className="iubenda-black no-brand iubenda-noiframe iubenda-embed hover:text-white transition-colors"
+                            title="Cookie Policy"
+                        >
+                            Cookie Policy
+                        </a>
+                        <span>|</span>
+                        <span>P.IVA: 13967810964</span>
                     </div>
                 </div>
             </div>
 
-            <div className="mt-16 text-center text-sm italic text-white/40 max-w-lg mx-auto">
-                "L'AI accelera tutto. Anche gli errori. Io servo a evitare quelli che non ti puoi permettere."
+
+            <div className="mt-16 text-center max-w-lg mx-auto">
+                <p className="text-sm italic text-white/40 mb-6">
+                    "L'AI accelera tutto. Anche gli errori. Io servo a evitare quelli che non ti puoi permettere."
+                </p>
+                <img
+                    src="/images/firma-andrea-lanzone.png"
+                    alt="Firma Andrea Lanzone"
+                    className="mx-auto w-64 opacity-70 invert"
+                />
             </div>
+
 
             <button
                 onClick={scrollToTop}
