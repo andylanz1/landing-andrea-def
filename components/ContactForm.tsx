@@ -15,7 +15,7 @@ export default function ContactForm() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="text-6xl md:text-8xl lg:text-9xl font-heading font-black uppercase leading-[0.8] tracking-tighter italic mb-8"
+                        className="text-5xl md:text-7xl lg:text-8xl font-heading font-black uppercase leading-[0.8] tracking-tighter italic mb-8"
                     >
                         Parliamo <br />
                         <span className="text-outline">del tuo</span> <br />
@@ -42,17 +42,17 @@ export default function ContactForm() {
                                 {/* Decorative elements for brutalist look */}
                                 <div className="absolute -inset-2 border-2 border-white/5 pointer-events-none" />
 
-                                <div className="bg-white hover:bg-accent-1 text-black p-10 lg:p-16 border-4 border-white shadow-[20px_20px_0px_rgba(255,255,255,0.1)] transition-colors duration-300">
-                                    <div className="flex flex-col items-center space-y-8 text-center">
-                                        <div className="w-20 h-20 bg-black flex items-center justify-center border-2 border-primary group-hover:bg-primary transition-colors">
-                                            <Mail className="w-10 h-10 text-white" />
+                                <div className="bg-white hover:bg-accent-1 text-black p-8 lg:p-12 border-4 border-white shadow-[20px_20px_0px_rgba(255,255,255,0.1)] transition-colors duration-300">
+                                    <div className="flex flex-col items-center space-y-6 text-center">
+                                        <div className="w-16 h-16 bg-black flex items-center justify-center border-2 border-primary group-hover:bg-primary transition-colors">
+                                            <Mail className="w-8 h-8 text-white" />
                                         </div>
 
                                         <div className="space-y-4">
-                                            <h3 className="text-4xl md:text-5xl font-heading font-black uppercase tracking-tighter leading-none">
+                                            <h3 className="text-3xl md:text-4xl font-heading font-black uppercase tracking-tighter leading-none">
                                                 SCRIVIMI ORA
                                             </h3>
-                                            <p className="text-lg font-bold opacity-70 tracking-tight">
+                                            <p className="text-base font-bold opacity-70 tracking-tight">
                                                 info@andrealanzone.it
                                             </p>
                                         </div>
