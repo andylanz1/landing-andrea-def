@@ -16,8 +16,7 @@ export default function Footer() {
                     <div>
                         <h4 className="text-4xl font-heading font-black text-white mb-6 uppercase italic tracking-tighter">Andrea <br />Lanzone</h4>
                         <p className="text-text-secondary text-sm font-bold uppercase tracking-widest leading-relaxed">
-                            Via G. Marconi 24<br />
-                            20090 Trezzano sul Naviglio (MI), IT<br />
+                            Milano, IT<br />
                             P.IVA 13967810964
                         </p>
                     </div>
@@ -25,7 +24,6 @@ export default function Footer() {
                     <div className="flex flex-col space-y-4">
                         <h5 className="text-xs font-black text-accent-1 uppercase tracking-[0.3em] mb-4">/ CONTACTS</h5>
                         <a href="mailto:info@andrealanzone.it" className="text-2xl font-heading font-black text-white hover:text-accent-1 transition-colors uppercase italic tracking-tighter">info@andrealanzone.it</a>
-                        <a href="https://www.linkedin.com/in/andrea-lanzone-marketing/" target="_blank" rel="noopener noreferrer" className="text-2xl font-heading font-black text-white hover:text-accent-1 transition-colors uppercase italic tracking-tighter">LinkedIn</a>
                     </div>
 
                     <div className="text-xs text-text-secondary font-bold uppercase tracking-widest leading-loose">

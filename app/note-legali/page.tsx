@@ -28,8 +28,7 @@ export default function NoteLegaliPage() {
             </h2>
             <p>
               Andrea Lanzone<br />
-              Via G. Marconi, 24<br />
-              20090 Trezzano sul Naviglio (MI), Italia<br />
+              Milano, Italia<br />
               P.IVA 13967810964<br />
               Email:{" "}
               <a

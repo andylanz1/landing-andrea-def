@@ -40,7 +40,8 @@ export default function CosaFaccio() {
                 </motion.h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 border-y border-white/10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-28">
+            <div className="grid grid-cols-1 lg:grid-cols-2 border border-white/10">
                 {/* DONTS */}
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -110,6 +111,7 @@ export default function CosaFaccio() {
                         ))}
                     </ul>
                 </motion.div>
+            </div>
             </div>
         </section>
     );
