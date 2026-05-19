@@ -1,52 +1,53 @@
 "use client";
 
 import React from "react";
-import { SectionWrapper } from "./ui/SectionWrapper";
-import { Card } from "./ui/Card";
 import { motion } from "framer-motion";
-import { XCircle, Activity, BarChart3, Layers } from "lucide-react";
 
-const problems = [
+const traps = [
     {
-        icon: <XCircle className="w-8 h-8 text-red-500" />,
-        title: "Progetti Deragliati",
-        description: "Iniziative che partono con entusiasmo ma si arenano dopo 3 mesi senza risultati tangibili.",
+        n: "01",
+        title: "Progetti che si arenano",
+        copy: "Iniziative partite con entusiasmo. Dopo 3 mesi: zero risultati, energia bruciata, nessuno che dica STOP.",
     },
     {
-        icon: <Activity className="w-8 h-8 text-orange-500" />,
-        title: "Automazioni Fragili",
-        description: "Workflow che si rompono al primo imprevisto, richiedendo costante manutenzione manuale.",
+        n: "02",
+        title: "Automazioni fragili",
+        copy: "Workflow che si rompono al primo imprevisto. Manutenzione manuale costante. Costo nascosto: il tuo tempo.",
     },
     {
-        icon: <BarChart3 className="w-8 h-8 text-yellow-500" />,
-        title: "Funnel Vuoti",
-        description: "Sistemi di vendita tecnicamente perfetti che però non portano fatturato reale.",
+        n: "03",
+        title: "Funnel tecnicamente perfetti",
+        copy: "Stack impeccabile. Conversion rate ottimo. Fatturato reale: zero. Nessuno collega i numeri alla decisione.",
     },
     {
-        icon: <Layers className="w-8 h-8 text-purple-500" />,
-        title: "Complessità Inutile",
-        description: "Accumulo di strumenti e software che rallentano l'azienda invece di accelerarla.",
+        n: "04",
+        title: "Complessità che si accumula",
+        copy: "Nuovo tool ogni mese. Nuova persona ogni trimestre. L'azienda rallenta invece di accelerare.",
     },
 ];
 
 export default function Problem() {
     return (
-        <SectionWrapper id="problem" className="relative bg-black border-y border-white/10">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-[length:100px_100px]" />
+        <section
+            id="problem"
+            className="relative bg-black border-t border-white/10 py-24 md:py-32 overflow-hidden"
+        >
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mb-16 md:mb-24">
+                    <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-text-secondary mb-6">
+                        — Il problema
+                    </div>
 
-            <div className="relative z-10 max-w-6xl mx-auto px-4">
-                <div className="mb-20 space-y-8">
                     <motion.h2
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-heading font-black uppercase leading-[0.85] tracking-tighter"
+                        className="font-heading uppercase leading-[0.92] tracking-tighter max-w-[1100px]"
+                        style={{ fontSize: "clamp(40px, 7vw, 112px)" }}
                     >
-                        Il problema non è <br />
-                        <span className="text-outline">fare le cose.</span> <br />
-                        <span className="text-accent-1 italic">È decidere</span> <br />
-                        cosa NON fare.
+                        Il problema non è{" "}
+                        <span className="text-outline">fare le cose</span>.<br />
+                        È <span className="text-accent-1">decidere</span> cosa NON fare.
                     </motion.h2>
 
                     <motion.div
@@ -54,35 +55,43 @@ export default function Problem() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl text-text-secondary max-w-2xl border-l-2 border-white/20 pl-8 py-4"
+                        className="mt-10 max-w-2xl border-l-2 border-accent-1 pl-6 py-2"
                     >
-                        <p className="mb-4">
-                            Oggi tutti hanno accesso agli stessi strumenti: AI, software, tutorial, freelancer. Eppure le aziende accumulano complessità invece di risultati.
+                        <p className="text-lg md:text-xl text-text-secondary leading-[1.55] mb-4">
+                            Oggi tutti hanno accesso agli stessi strumenti: AI, software,
+                            tutorial, freelancer. Eppure le aziende accumulano complessità
+                            invece di risultati.
                         </p>
-                        <p className="text-white font-bold uppercase tracking-widest text-sm">
+                        <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-white">
                             Nessuno si assume la responsabilità di dire di no.
                         </p>
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/10">
-                    {problems.map((problem, index) => (
+                {/* 4 traps grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
+                    {traps.map((t, i) => (
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
+                            key={t.n}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: i * 0.08 }}
+                            className="p-8 md:p-10 border-r border-b border-white/10 group hover:bg-accent-1 transition-colors duration-200"
                         >
-                            <Card className="h-full border-r border-b border-white/10 p-10 hover:bg-accent-1 group transition-colors duration-200">
-                                <div className="mb-10 group-hover:text-black">{problem.icon}</div>
-                                <h3 className="text-2xl font-heading font-bold uppercase mb-4 group-hover:text-black leading-tight italic">{problem.title}</h3>
-                                <p className="text-text-secondary text-sm group-hover:text-black/80 font-medium">{problem.description}</p>
-                            </Card>
+                            <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-accent-1 group-hover:text-black mb-4">
+                                — {t.n}
+                            </div>
+                            <h3 className="font-heading uppercase text-2xl md:text-[28px] leading-[1.02] tracking-tight mb-4 text-white group-hover:text-black">
+                                {t.title}
+                            </h3>
+                            <p className="text-text-secondary text-[15px] leading-[1.6] group-hover:text-black/80">
+                                {t.copy}
+                            </p>
                         </motion.div>
                     ))}
                 </div>
             </div>
-        </SectionWrapper>
+        </section>
     );
 }

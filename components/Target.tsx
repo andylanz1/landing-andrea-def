@@ -1,73 +1,124 @@
 "use client";
 
 import React from "react";
-import { SectionWrapper } from "./ui/SectionWrapper";
-import { Card } from "./ui/Card";
 import { motion } from "framer-motion";
-import { Check, X } from "lucide-react";
 
 const forYou = [
-    "Gestisci complessità reale (non 'ho bisogno di un sito')",
-    "Hai già provato 'esperti' e tool inutili",
-    "Vuoi meno caos, non più output",
-    "Capisci che l'errore costa più dell'azione lenta",
-    "Vuoi qualcuno che dica anche 'no'"
+    "Hai un'azienda con un minimo di storico — anche da 200k in su.",
+    "Sai cosa vendi e quali sono i tuoi punti di forza.",
+    "La complessità interna ti sta divorando energia.",
+    "Sai che l'AI conta, ma non vuoi un'altra demo da LinkedIn.",
+    "Cerchi qualcuno che ti dica anche cosa NON fare.",
+    "Sei pronto a fermare progetti che non funzionano.",
 ];
 
 const notForYou = [
-    "Cerchi esecuzione low-cost",
-    "Vuoi solo qualcuno che 'faccia' senza capire",
-    "Vuoi mantenere il controllo di ogni micro-decisione",
-    "Pensi che l'AI sia una bacchetta magica",
-    "Cerchi qualcuno che ti dica sempre di sì"
+    "Hai una micro-attività e cerchi esecuzione low-cost.",
+    "Vuoi un consulente che dica solo quello che vuoi sentire.",
+    "Cerchi un fornitore di servizi AI a ore.",
+    "Pensi che basti un tool nuovo per cambiare risultati.",
+    "Non sei disposto a smontare quello che hai costruito.",
 ];
 
 export default function Target() {
     return (
-        <SectionWrapper id="target" className="bg-black border-b border-white/10 px-0 sm:px-0 lg:px-0">
-            <div className="grid grid-cols-1 lg:grid-cols-2 lg:divide-x divide-white/10 border-y border-white/10">
-                {/* For You */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+        <section
+            id="perchi"
+            className="bg-black border-t border-white/10 py-24 md:py-32"
+        >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-text-secondary mb-6">
+                    — Per chi
+                </div>
+                <motion.h2
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="p-12 lg:p-24 bg-black group transition-colors duration-500 hover:bg-zinc-900 border-b lg:border-b-0 border-white/10"
+                    className="font-heading uppercase leading-[0.92] tracking-tighter mb-16 max-w-[900px]"
+                    style={{ fontSize: "clamp(40px, 5.5vw, 80px)" }}
                 >
-                    <h2 className="text-5xl md:text-7xl font-heading font-black uppercase leading-[0.85] tracking-tighter mb-12 italic">
-                        È per te <br />
-                        <span className="text-accent-1">se...</span>
-                    </h2>
-                    <ul className="space-y-8">
-                        {forYou.map((item, i) => (
-                            <li key={i} className="flex items-start text-white text-xl md:text-2xl font-black uppercase tracking-tight">
-                                <span className="w-10 h-10 border-4 border-accent-1 text-accent-1 flex items-center justify-center mr-6 shrink-0 italic">✓</span>
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
-                </motion.div>
+                    Non lavoro con<br />tutti. Scegli bene.
+                </motion.h2>
 
-                {/* Not For You */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    className="p-12 lg:p-24 bg-white"
-                >
-                    <h2 className="text-5xl md:text-7xl font-heading font-black uppercase leading-[0.85] tracking-tighter mb-12 italic text-black">
-                        NON è <br />
-                        <span className="text-accent-1">per te se...</span>
-                    </h2>
-                    <ul className="space-y-8">
-                        {notForYou.map((item, i) => (
-                            <li key={i} className="flex items-start text-black/40 text-xl font-bold uppercase tracking-tight line-through decoration-black/20">
-                                <span className="w-10 h-10 bg-black text-white flex items-center justify-center mr-6 shrink-0 italic">✗</span>
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
-                </motion.div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 border border-white/10">
+                    {/* For You */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-white/10"
+                    >
+                        <div className="flex items-center gap-3 mb-6">
+                            <span
+                                className="w-2 h-2 rounded-full"
+                                style={{ background: "#4ADE80" }}
+                            />
+                            <span
+                                className="font-mono text-[11px] tracking-[0.18em] uppercase"
+                                style={{ color: "#4ADE80" }}
+                            >
+                                Per te se
+                            </span>
+                        </div>
+                        <ul className="space-y-4">
+                            {forYou.map((t, i) => (
+                                <motion.li
+                                    key={i}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.05 }}
+                                    className="flex items-start gap-4"
+                                >
+                                    <span
+                                        className="font-mono text-xs shrink-0 mt-1"
+                                        style={{ color: "#4ADE80" }}
+                                    >
+                                        →
+                                    </span>
+                                    <span className="text-white text-[17px] md:text-lg leading-[1.5]">
+                                        {t}
+                                    </span>
+                                </motion.li>
+                            ))}
+                        </ul>
+                    </motion.div>
+
+                    {/* Not For You */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="p-8 md:p-10"
+                    >
+                        <div className="flex items-center gap-3 mb-6">
+                            <span className="w-2 h-2 rounded-full bg-white/30" />
+                            <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-white/40">
+                                Non per te se
+                            </span>
+                        </div>
+                        <ul className="space-y-4">
+                            {notForYou.map((t, i) => (
+                                <motion.li
+                                    key={i}
+                                    initial={{ opacity: 0, x: 10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.05 }}
+                                    className="flex items-start gap-4"
+                                >
+                                    <span className="font-mono text-xs text-white/40 shrink-0 mt-1">
+                                        ×
+                                    </span>
+                                    <span className="text-text-secondary text-[17px] md:text-lg leading-[1.5] line-through decoration-white/15">
+                                        {t}
+                                    </span>
+                                </motion.li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                </div>
             </div>
-        </SectionWrapper>
+        </section>
     );
 }

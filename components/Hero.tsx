@@ -2,88 +2,100 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "./ui/Button";
-import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
-    const scrollToForm = () => {
+    const scrollToForm = (e: React.MouseEvent) => {
+        e.preventDefault();
         const form = document.getElementById("contact-form");
-        if (form) {
-            form.scrollIntoView({ behavior: "smooth" });
-        }
+        if (form) form.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary px-4 sm:px-6 lg:px-8">
-            {/* Background Grid Overlay */}
-            <div className="absolute inset-0 z-0 bg-[url('/grid.svg')] bg-center opacity-10" />
+        <section
+            id="top"
+            className="relative overflow-hidden pt-32 pb-36 md:pt-40 md:pb-44 bg-black"
+        >
+            {/* Faint cyan glow accent in corner */}
+            <div
+                aria-hidden
+                className="pointer-events-none absolute -top-48 -right-48 w-[600px] h-[600px]"
+                style={{
+                    background:
+                        "radial-gradient(circle, rgba(0,217,255,0.08) 0%, rgba(0,0,0,0) 60%)",
+                }}
+            />
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto text-left px-4">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="space-y-12"
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="font-mono text-[11px] tracking-[0.18em] uppercase text-text-secondary mb-8"
                 >
-                    <h1 className="flex flex-col items-start font-heading font-black leading-[0.85] tracking-tighter uppercase overflow-hidden">
-                        <span className="text-accent-1 text-5xl md:text-7xl lg:text-[120px] xl:text-[145px]">
-                            Quando la
-                        </span>
-                        <span className="text-outline text-3xl md:text-5xl lg:text-[85px] xl:text-[105px]">
-                            complessità è alta,
-                        </span>
-                        <span className="text-white text-7xl md:text-9xl lg:text-[180px] xl:text-[220px]">
-                            ci sono io.
-                        </span>
-                    </h1>
-
-                    <div className="max-w-2xl mx-auto space-y-8">
-                        <p className="text-xl md:text-2xl text-text-secondary font-medium tracking-tight border-l-4 border-accent-1 pl-6 py-2 text-left">
-                            Non vendo ore. Non vendo task. <br />
-                            Mi prendo la responsabilità delle decisioni quando il contesto è confuso,
-                            i sistemi sono fragili e l'errore costa caro.
-                        </p>
-
-                        <div className="flex flex-col md:flex-row items-center gap-6 pt-4">
-                            <Button
-                                size="lg"
-                                onClick={scrollToForm}
-                                className="group w-full md:w-auto h-20 text-xl px-12"
-                            >
-                                START THE ENGINE →
-                            </Button>
-
-                            <p className="text-accent-1 font-bold tracking-widest text-sm uppercase">
-                                👉 Questo non è per tutti.
-                            </p>
-                        </div>
-                    </div>
+                    Consulenza strategica · dal 2007
                 </motion.div>
-            </div>
 
-            {/* Floating Particles (Simplified for performance) */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-                {[...Array(5)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className="absolute w-1 h-1 bg-white/40 rounded-full"
-                        initial={{
-                            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-                            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-                            opacity: 0.2
-                        }}
-                        animate={{
-                            y: [0, -100],
-                            opacity: [0.2, 0.5, 0.2]
-                        }}
-                        transition={{
-                            repeat: Infinity,
-                            duration: 5 + Math.random() * 5,
-                            ease: "linear",
-                            delay: Math.random() * 5
-                        }}
-                    />
-                ))}
+                <motion.h1
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
+                    className="font-heading uppercase leading-[0.92] tracking-tighter mb-8 max-w-[1100px]"
+                    style={{ fontSize: "clamp(64px, 11vw, 176px)" }}
+                >
+                    Decido cosa<br />
+                    fare, cosa{" "}
+                    <span className="text-accent-1">fermare</span>,<br />
+                    cosa eliminare.
+                </motion.h1>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-text-secondary max-w-[720px] mb-12 font-normal leading-[1.5]"
+                    style={{ fontSize: "clamp(18px, 2vw, 26px)" }}
+                >
+                    Consulenza strategica e decisionale per imprenditori che gestiscono
+                    complessità reale. AI come leva strategica,{" "}
+                    <span className="text-white">non come prodotto</span>.
+                </motion.p>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.35 }}
+                    className="flex gap-4 flex-wrap items-center"
+                >
+                    <a
+                        href="#contact-form"
+                        onClick={scrollToForm}
+                        className="inline-flex items-center gap-3 px-7 py-4 bg-accent-1 text-white font-bold uppercase tracking-wide hover:bg-[#FF6A22] transition-colors"
+                        style={{ boxShadow: "0 0 0 1px rgba(255,77,0,0.4), 0 8px 32px rgba(255,77,0,0.35)" }}
+                    >
+                        Prenota una call <span className="font-mono">→</span>
+                    </a>
+                    <a
+                        href="#metodo"
+                        className="inline-flex items-center gap-3 px-6 py-[14px] border-2 border-white text-white font-semibold uppercase tracking-wide hover:bg-white hover:text-black transition-colors"
+                    >
+                        Leggi il metodo
+                    </a>
+                </motion.div>
+
+                {/* Bottom meta line */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    className="flex items-center gap-8 flex-wrap mt-24 pt-6 border-t border-white/10 font-mono text-[11px] tracking-[0.14em] uppercase text-white/40"
+                >
+                    <span>
+                        <span className="text-accent-1">●</span> Disponibile — 2 slot / mese
+                    </span>
+                    <span>Base · Milano</span>
+                    <span>ITA · ENG</span>
+                    <span className="ml-auto">Scroll ↓</span>
+                </motion.div>
             </div>
         </section>
     );

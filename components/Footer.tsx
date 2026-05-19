@@ -33,17 +33,35 @@ export default function Footer() {
                         <p>© 2026 Andrea Lanzone. All rights reserved.</p>
                         <div className="mt-4 flex flex-col space-y-2">
                             <a
-                                href="https://www.iubenda.com/privacy-policy/54151139"
+                                href="/privacy-policy"
                                 className="hover:text-white transition-colors border-b border-white/10 w-fit"
                             >
                                 Privacy Policy
                             </a>
                             <a
-                                href="https://www.iubenda.com/privacy-policy/54151139/cookie-policy"
+                                href="/cookie-policy"
                                 className="hover:text-white transition-colors border-b border-white/10 w-fit"
                             >
                                 Cookie Policy
                             </a>
+                            <a
+                                href="/note-legali"
+                                className="hover:text-white transition-colors border-b border-white/10 w-fit"
+                            >
+                                Note Legali
+                            </a>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    if (typeof window !== "undefined") {
+                                        (window as unknown as { _iub?: { cs?: { api?: { openPreferences?: () => void } } } })
+                                            ._iub?.cs?.api?.openPreferences?.();
+                                    }
+                                }}
+                                className="hover:text-white transition-colors border-b border-white/10 w-fit text-left cursor-pointer"
+                            >
+                                Preferenze Cookie
+                            </button>
                         </div>
                     </div>
                 </div>

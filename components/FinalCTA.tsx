@@ -1,60 +1,68 @@
 "use client";
 
 import React from "react";
-import { SectionWrapper } from "./ui/SectionWrapper";
-import { Button } from "./ui/Button";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export default function FinalCTA() {
-    const scrollToForm = () => {
+    const scrollToForm = (e: React.MouseEvent) => {
+        e.preventDefault();
         const form = document.getElementById("contact-form");
-        if (form) {
-            form.scrollIntoView({ behavior: "smooth" });
-        }
+        if (form) form.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
-        <SectionWrapper id="final-cta" className="relative bg-gradient-to-b from-primary to-primary-dark overflow-hidden py-32">
-            {/* Animated Background */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-accent-1/10 rounded-full blur-[150px] animate-pulse-glow" />
-            </div>
-
-            <div className="relative z-10 text-center max-w-4xl mx-auto space-y-8">
-                <motion.h2
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="text-4xl md:text-6xl lg:text-8xl font-heading font-black leading-[0.85] tracking-tighter uppercase italic"
-                >
-                    Se hai bisogno di qualcuno che decide, <br />
-                    <span className="text-gradient">parliamone.</span>
-                </motion.h2>
-
-                <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-                    Non compila il form chi non ha un problema reale. <br />
-                    Scrivimi solo se il contesto è incasinato e le decisioni contano.
-                </p>
-
+        <section className="bg-black border-t border-white/10 py-20 md:py-28">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="relative p-10 md:p-14 border-2 border-white bg-black"
+                    style={{ boxShadow: "12px 12px 0 var(--color-accent-1)" }}
                 >
-                    <Button
-                        size="lg"
-                        onClick={scrollToForm}
-                        className="text-xl py-8 px-12 shadow-[0_0_30px_rgba(0,217,255,0.3)]"
-                        rightIcon={<ArrowRight className="w-6 h-6 ml-2" />}
+                    {/* Eyebrow chip overlapping border */}
+                    <div className="absolute -top-3 left-8 bg-black px-3 font-mono text-[11px] tracking-[0.18em] uppercase text-accent-1">
+                        — Quote
+                    </div>
+
+                    <h2
+                        className="font-heading uppercase leading-[0.98] tracking-tighter"
+                        style={{ fontSize: "clamp(32px, 5vw, 64px)" }}
                     >
-                        Richiedi una Call Esplorativa
-                    </Button>
+                        &ldquo;Non vendo idee.<br />
+                        Vendo <span className="text-accent-1">decisioni</span>.&rdquo;
+                    </h2>
+
+                    <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between gap-6 flex-wrap">
+                        <div>
+                            <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-text-secondary">
+                                Andrea Lanzone
+                            </div>
+                            <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-white/40 mt-1">
+                                Consulente strategico
+                            </div>
+                        </div>
+
+                        <a
+                            href="#contact-form"
+                            onClick={scrollToForm}
+                            className="inline-flex items-center gap-3 px-6 py-3 bg-accent-1 text-white font-bold uppercase tracking-wide text-sm hover:bg-[#FF6A22] transition-colors"
+                            style={{
+                                boxShadow:
+                                    "0 0 0 1px rgba(255,77,0,0.4), 0 8px 32px rgba(255,77,0,0.35)",
+                            }}
+                        >
+                            Scrivimi <ArrowRight className="w-4 h-4" />
+                        </a>
+                    </div>
                 </motion.div>
 
-                <p className="text-sm text-text-secondary opacity-70">
-                    Zero pressione. Parliamo, capisci se ha senso, decidi.
+                <p className="mt-8 text-center text-text-secondary text-sm leading-[1.6] max-w-2xl mx-auto">
+                    Non compila il form chi non ha un problema reale. Scrivimi solo se
+                    il contesto è incasinato e le decisioni contano.
                 </p>
             </div>
-        </SectionWrapper>
+        </section>
     );
 }
