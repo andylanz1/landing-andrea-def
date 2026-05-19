@@ -99,3 +99,11 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
+
+/* Tutti gli headline (font display Oswald) usano weight 600 di default */
+.font-heading,
+h1.font-heading, h2.font-heading, h3.font-heading,
+[class*="font-heading"] {
+  font-weight: 600;
+  font-stretch: normal;
+}

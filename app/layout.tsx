@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Anton, Archivo, JetBrains_Mono } from "next/font/google";
+import { Oswald, Archivo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import IubendaScripts from "@/components/IubendaScripts";
 
-const anton = Anton({
+const oswald = Oswald({
   variable: "--font-anton",
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body
-        className={`${anton.variable} ${archivo.variable} ${jetbrainsMono.variable} antialiased bg-black text-white font-sans`}
+        className={`${oswald.variable} ${archivo.variable} ${jetbrainsMono.variable} antialiased bg-black text-white font-sans`}
       >
         <IubendaScripts />
         {children}
