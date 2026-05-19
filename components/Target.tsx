@@ -4,20 +4,20 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const forYou = [
-    "Hai un'azienda con un minimo di storico — anche da 200k in su.",
-    "Sai cosa vendi e quali sono i tuoi punti di forza.",
-    "La complessità interna ti sta divorando energia.",
-    "Sai che l'AI conta, ma non vuoi un'altra demo da LinkedIn.",
-    "Cerchi qualcuno che ti dica anche cosa NON fare.",
+    "Gestisci complessità reale (non 'ho bisogno di un sitarello', per quello chiama un freelance).",
+    "Hai già provato 'esperti' e tool inutili e ti hanno svuotato il portafoglio.",
+    "Vuoi meno caos, non più output.",
+    "Capisci che l'errore costa più dell'azione lenta.",
+    "Vuoi qualcuno che ti dica anche NO (e che ti spieghi perchè).",
     "Sei pronto a fermare progetti che non funzionano.",
 ];
 
 const notForYou = [
-    "Hai una micro-attività e cerchi esecuzione low-cost.",
-    "Vuoi un consulente che dica solo quello che vuoi sentire.",
-    "Cerchi un fornitore di servizi AI a ore.",
-    "Pensi che basti un tool nuovo per cambiare risultati.",
-    "Non sei disposto a smontare quello che hai costruito.",
+    "Cerchi esecuzione low-cost (qui Fiverr fa il suo lavoro meglio di me).",
+    "Vuoi solo qualcuno che 'faccia' senza capire il perchè.",
+    "Vuoi mantenere il controllo di ogni micro-decisione (allora che mi paghi a fare?).",
+    "Pensi che l'AI sia una bacchetta magica.",
+    "Cerchi uno che ti dica sempre di SÌ (esistono già, costano molto meno e ti rovineranno l'azienda).",
 ];
 
 export default function Target() {
@@ -37,7 +37,7 @@ export default function Target() {
                     className="font-heading uppercase leading-[0.92] tracking-tighter mb-16 max-w-[900px]"
                     style={{ fontSize: "clamp(40px, 5.5vw, 80px)" }}
                 >
-                    Non lavoro con<br />tutti. Scegli bene.
+                    Questo non è<br />per tutti.
                 </motion.h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 border border-white/10">

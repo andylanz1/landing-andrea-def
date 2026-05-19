@@ -107,3 +107,75 @@ h1.font-heading, h2.font-heading, h3.font-heading,
   font-weight: 600;
   font-stretch: normal;
 }
+
+/* =========================================================
+   WOW EFFECTS — editorial enhancements
+   ========================================================= */
+
+/* Marquee infinito */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Glow pulsante per CTA arancio (applicare a .glow-pulse) */
+@keyframes pulseAccent {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 77, 0, 0.6), 0 0 24px rgba(255, 77, 0, 0.3); }
+  50%      { box-shadow: 0 0 0 12px rgba(255, 77, 0, 0), 0 0 48px rgba(255, 77, 0, 0.55); }
+}
+.glow-pulse {
+  animation: pulseAccent 2.4s ease-in-out infinite;
+}
+
+/* Text reveal: ogni titolo con .reveal-up scivola in alto sull'entrata viewport */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(40px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+.reveal-up { animation: revealUp 0.8s cubic-bezier(0.2,0.8,0.2,1) both; }
+
+/* Scrollbar custom (Webkit + Firefox) — solo desktop */
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #000; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff4d00 0%, #cc3d00 100%);
+    border: 2px solid #000;
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #ff6a22; }
+  html { scrollbar-color: #ff4d00 #000; scrollbar-width: thin; }
+}
+
+/* Glitch su hover di .glitch-hover (sottile, non kitsch) */
+.glitch-hover { position: relative; display: inline-block; }
+.glitch-hover::before,
+.glitch-hover::after {
+  content: attr(data-text);
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s;
+}
+.glitch-hover::before { color: #ff4d00; transform: translate(2px, -1px); }
+.glitch-hover::after  { color: #00d9ff; transform: translate(-2px, 1px); }
+.glitch-hover:hover::before,
+.glitch-hover:hover::after { opacity: 0.85; }
+
+/* Selezione testo: brand color */
+::selection { background: #ff4d00; color: #000; }
+
+/* Link underline animato (per i link inline) */
+.link-underline {
+  background-image: linear-gradient(transparent calc(100% - 2px), #ff4d00 2px);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s cubic-bezier(0.2,0.8,0.2,1);
+}
+.link-underline:hover { background-size: 100% 100%; }
+
+/* Riduci animazioni se l'utente lo chiede */
+@media (prefers-reduced-motion: reduce) {
+  .glow-pulse, .reveal-up { animation: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

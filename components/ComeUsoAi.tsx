@@ -7,23 +7,23 @@ import { Bot, BrainCircuit } from "lucide-react";
 const useCases = [
     {
         n: "01",
-        title: "Accelero analisi che richiederebbero giorni",
-        copy: "Documenti, report, conversazioni: l'AI li digerisce in minuti. Io leggo il pattern.",
+        title: "Accelero analisi che a mano richiederebbero giorni",
+        copy: "Documenti, report, conversazioni: l'AI li digerisce in 20 minuti. Io leggo il pattern e decido.",
     },
     {
         n: "02",
-        title: "Simulo scenari prima di decidere",
-        copy: "Stress-test su ipotesi, vie alternative, conseguenze. Decisione informata, non istintiva.",
+        title: "Simulo scenari prima di prendere una decisione",
+        copy: "Testo 10 strade prima di sceglierne 1. Decisione informata, non istintiva.",
     },
     {
         n: "03",
         title: "Stresso le ipotesi per trovare i punti deboli",
-        copy: "Dove si rompe? Cosa abbiamo dato per scontato? L'AI fa il devil's advocate, io chiudo.",
+        copy: "Dove si rompe? Cosa abbiamo dato per scontato? L'AI è il mio avvocato del diavolo personale, lavora 24/7 senza lamentarsi.",
     },
     {
         n: "04",
         title: "Riduco il costo dell'errore",
-        copy: "Test virtuali prima di toccare il reale. Sbagli in sandbox, non in produzione.",
+        copy: "Test virtuali prima di toccare il reale. Sbagli in sandbox, non in produzione dove brucia soldi veri.",
     },
 ];
 
@@ -52,12 +52,13 @@ export default function ComeUsoAI() {
                     >
                         Sì, uso l'AI.<br />
                         <span className="text-outline">Ovunque</span>{" "}
-                        <span className="text-accent-1">sia utile</span>.
+                        <span className="text-accent-1">abbia senso davvero</span>.
                     </h2>
 
                     <p className="text-white text-lg md:text-xl leading-[1.55] mb-10 font-medium">
-                        Non ti faccio pagare l'AI. Ti faccio pagare{" "}
-                        <span className="text-accent-1">le decisioni</span> che prendo
+                        Attenzione, perchè qui c'è il TRUCCO che pochi capiscono: non ti
+                        faccio pagare l'AI. Ti faccio pagare{" "}
+                        <span className="text-accent-1">le DECISIONI</span> che prendo
                         usando l'AI.
                     </p>
 
@@ -137,7 +138,7 @@ export default function ComeUsoAI() {
                         <p className="mt-8 text-text-secondary text-[15px] leading-[1.55]">
                             L'AI suggerisce 10 opzioni.{" "}
                             <span className="text-white">
-                                Io scelgo l'unica che funziona nel tuo contesto
+                                Io scelgo l'UNICA che funziona nel TUO contesto specifico
                             </span>
                             .
                         </p>

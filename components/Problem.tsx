@@ -6,23 +6,23 @@ import { motion } from "framer-motion";
 const traps = [
     {
         n: "01",
-        title: "Progetti che si arenano",
-        copy: "Iniziative partite con entusiasmo. Dopo 3 mesi: zero risultati, energia bruciata, nessuno che dica STOP.",
+        title: "Progetti deragliati",
+        copy: "Parti con entusiasmo, fai 3 riunioni hype, dopo 3 mesi hai un Trello pieno di card e zero risultati tangibili. Conosco la storia, l'ho vissuta io stesso decine di volte.",
     },
     {
         n: "02",
         title: "Automazioni fragili",
-        copy: "Workflow che si rompono al primo imprevisto. Manutenzione manuale costante. Costo nascosto: il tuo tempo.",
+        copy: "Il workflow funziona benissimo finchè non arriva l'imprevisto. Poi sgobbi 4 ore al giorno solo per tenerlo in piedi. Ti suona familiare?",
     },
     {
         n: "03",
-        title: "Funnel tecnicamente perfetti",
-        copy: "Stack impeccabile. Conversion rate ottimo. Fatturato reale: zero. Nessuno collega i numeri alla decisione.",
+        title: "Sistemi pieni, casse vuote",
+        copy: "Tecnicamente tutto perfetto — dashboard, report, tracking pixel-perfect — ma a fine mese il fatturato è PIATTO. E lo so cosa vuol dire, anche per me è stato così.",
     },
     {
         n: "04",
-        title: "Complessità che si accumula",
-        copy: "Nuovo tool ogni mese. Nuova persona ogni trimestre. L'azienda rallenta invece di accelerare.",
+        title: "Complessità inutile",
+        copy: "17 tool in stack, 4 abbonamenti che nessuno usa più, un Notion da 600 pagine che nessuno legge. Stai BUTTANDO VIA SOLDI e soprattutto TEMPO, che è molto peggio.",
     },
 ];
 
@@ -46,7 +46,7 @@ export default function Problem() {
                         style={{ fontSize: "clamp(40px, 7vw, 112px)" }}
                     >
                         Il problema non è{" "}
-                        <span className="text-outline">fare le cose</span>.<br />
+                        <span className="text-outline">FARE le cose</span>.<br />
                         È <span className="text-accent-1">decidere</span> cosa NON fare.
                     </motion.h2>
 
@@ -59,11 +59,11 @@ export default function Problem() {
                     >
                         <p className="text-lg md:text-xl text-text-secondary leading-[1.55] mb-4">
                             Oggi tutti hanno accesso agli stessi strumenti: AI, software,
-                            tutorial, freelancer. Eppure le aziende accumulano complessità
-                            invece di risultati.
+                            tutorial gratis su YouTube, freelancer su Fiverr a 5€ l'ora.
+                            Eppure le aziende non producono più RISULTATI, producono CASINO.
                         </p>
                         <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-white">
-                            Nessuno si assume la responsabilità di dire di no.
+                            Sai perchè? Perchè nessuno ha il coraggio di dire NO.
                         </p>
                     </motion.div>
                 </div>

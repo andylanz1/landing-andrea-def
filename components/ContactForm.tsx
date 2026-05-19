@@ -58,9 +58,9 @@ export default function ContactForm() {
                             DEVI DECIDERE.
                         </h2>
                         <p className="text-xl text-text-secondary leading-relaxed border-l-4 border-accent-1 pl-6 py-3">
-                            Una frase, senza giri di parole. Se è un fit, ti rispondo in
-                            48h con una call da 30 minuti. Se non lo è, te lo dico anche
-                            quello.
+                            Una frase, senza giri di parole. Se è un fit, ti rispondo
+                            entro 48h con una call esplorativa da 30 minuti. Se non lo è,
+                            te lo dico anche quello.
                         </p>
                     </motion.div>
                 </div>
@@ -88,8 +88,8 @@ export default function ContactForm() {
                                 TI SCRIVO IO.
                             </div>
                             <p className="text-text-secondary text-lg mt-6">
-                                Massimo 48h. Se è un fit ti propongo una call; se non lo
-                                è ti dico anche quello.
+                                Entro 48h massimo. Se è un fit ti propongo una call; se
+                                non lo è te lo dico anche quello. Zero giri di parole.
                             </p>
                         </div>
                     ) : (
@@ -126,7 +126,7 @@ export default function ContactForm() {
                                 label="Cosa devi decidere"
                                 value={form.cosa}
                                 onChange={(v) => setForm({ ...form, cosa: v })}
-                                placeholder="Una frase. Senza giri di parole."
+                                placeholder="Una frase, senza giri di parole."
                                 textarea
                                 required
                             />
@@ -137,7 +137,7 @@ export default function ContactForm() {
                                     disabled={status === "sending"}
                                     className="inline-flex items-center gap-3 bg-accent-1 hover:bg-white text-black font-bold uppercase tracking-wide px-7 py-4 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
-                                    {status === "sending" ? "INVIO IN CORSO…" : "INVIA RICHIESTA"}
+                                    {status === "sending" ? "INVIO IN CORSO…" : "SCRIVIMI ORA"}
                                     {status !== "sending" && <ArrowRight className="w-5 h-5" />}
                                 </button>
                                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">

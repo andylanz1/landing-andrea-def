@@ -32,7 +32,7 @@ export default function Hero() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="font-mono text-[11px] tracking-[0.18em] uppercase text-text-secondary mb-8"
                 >
-                    Consulenza strategica · dal 2007
+                    Consulente strategico · dal 2007
                 </motion.div>
 
                 <motion.h1
@@ -42,10 +42,10 @@ export default function Hero() {
                     className="font-heading uppercase leading-[0.92] tracking-tighter mb-8 max-w-[1100px]"
                     style={{ fontSize: "clamp(64px, 11vw, 176px)" }}
                 >
-                    Decido cosa<br />
-                    fare, cosa{" "}
-                    <span className="text-accent-1">fermare</span>,<br />
-                    cosa eliminare.
+                    Quando il tuo business<br />
+                    è nel{" "}
+                    <span className="text-accent-1">CASINO</span>,<br />
+                    chi cavolo chiami?
                 </motion.h1>
 
                 <motion.p
@@ -55,9 +55,9 @@ export default function Hero() {
                     className="text-text-secondary max-w-[720px] mb-12 font-normal leading-[1.5]"
                     style={{ fontSize: "clamp(18px, 2vw, 26px)" }}
                 >
-                    Consulenza strategica e decisionale per imprenditori che gestiscono
-                    complessità reale. AI come leva strategica,{" "}
-                    <span className="text-white">non come prodotto</span>.
+                    Quando tutto sembra urgente, ogni decisione sembra sbagliata e ogni
+                    "esperto" ti dice una cosa diversa. Ecco, è{" "}
+                    <span className="text-white">lì che ti servo io</span>.
                 </motion.p>
 
                 <motion.div
@@ -72,13 +72,13 @@ export default function Hero() {
                         className="inline-flex items-center gap-3 px-7 py-4 bg-accent-1 text-white font-bold uppercase tracking-wide hover:bg-[#FF6A22] transition-colors"
                         style={{ boxShadow: "0 0 0 1px rgba(255,77,0,0.4), 0 8px 32px rgba(255,77,0,0.35)" }}
                     >
-                        Prenota una call <span className="font-mono">→</span>
+                        Scrivimi ora <span className="font-mono">→</span>
                     </a>
                     <a
                         href="#metodo"
                         className="inline-flex items-center gap-3 px-6 py-[14px] border-2 border-white text-white font-semibold uppercase tracking-wide hover:bg-white hover:text-black transition-colors"
                     >
-                        Leggi il metodo
+                        Capisci se è per te
                     </a>
                 </motion.div>
 
@@ -90,7 +90,7 @@ export default function Hero() {
                     className="flex items-center gap-8 flex-wrap mt-24 pt-6 border-t border-white/10 font-mono text-[11px] tracking-[0.14em] uppercase text-white/40"
                 >
                     <span>
-                        <span className="text-accent-1">●</span> Disponibile — 2 slot / mese
+                        <span className="text-accent-1">●</span> Disponibile — solo 2 slot al mese
                     </span>
                     <span>Base · Milano</span>
                     <span>ITA · ENG</span>

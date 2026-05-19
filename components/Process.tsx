@@ -8,25 +8,25 @@ const steps = [
         n: "01",
         label: "Mandato chiaro",
         title: "Definiamo perimetro e responsabilità",
-        copy: "Non 'fammi un'offerta'. Ecco il problema, ecco cosa decidiamo, ecco il confine.",
+        copy: "Non 'fammi un'offerta', ma 'ecco il problema'. Se non c'è un problema chiaro, non c'è nemmeno la mia soluzione.",
     },
     {
         n: "02",
         label: "Intervento mirato",
-        title: "Decido cosa si fa, cosa si ferma, cosa si elimina",
-        copy: "Tolgo il superfluo prima di aggiungere. L'AI mappa, io taglio.",
+        title: "Decido cosa si fa, cosa si FERMA, cosa si ELIMINA",
+        copy: "Tolgo il superfluo. Spoiler: nel 90% dei casi, fermare ed eliminare conta più che fare cose nuove.",
     },
     {
         n: "03",
         label: "Sistema semplice",
         title: "Meno strumenti. Meno persone. Più chiarezza",
-        copy: "Un sistema che funziona anche senza di me. Documentato. Replicabile.",
+        copy: "Un sistema che funziona anche senza di me. Non voglio diventare il tuo punto di fallimento singolo.",
     },
     {
         n: "04",
         label: "Uscita pulita",
         title: "Niente dipendenza, autonomia operativa",
-        copy: "Ti lascio sapere fare, non solo cose fatte. Se serve, torno. Se non serve, non torno.",
+        copy: "Ti lascio documentazione, autonomia e un manuale per andare avanti da solo. Se serve, torno. Se non serve, non torno.",
     },
 ];
 
@@ -47,7 +47,7 @@ export default function Process() {
                     className="font-heading uppercase leading-[0.92] tracking-tighter mb-16 max-w-[1000px]"
                     style={{ fontSize: "clamp(40px, 6vw, 88px)" }}
                 >
-                    4 step. <span className="text-accent-1">Niente fuffa.</span>
+                    4 step. <span className="text-accent-1">Zero fuffa.</span>
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">

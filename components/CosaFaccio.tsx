@@ -4,19 +4,19 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const donts = [
-    "Non ti faccio la strategia e poi sparisco lasciandoti un PDF",
-    "Non eseguo task a lista come un dipendente esterno",
-    "Non vendo ore, vendo risultati e decisioni",
-    "Non implemento cose in cui non credo, anche se insisti",
-    "Non aggiungo AI 'perché va di moda' — solo dove ha senso economico",
+    "Non ti faccio la strategia e poi sparisco lasciandoti un PDF da archiviare nel cassetto delle buone intenzioni",
+    "Non eseguo task a lista come fossi un dipendente in remoto",
+    "Non vendo ore, vendo DECISIONI e RISULTATI",
+    "Non implemento cose in cui non credo, anche se insisti (mi paghi pure per dirti NO)",
+    "Non aggiungo AI 'perchè va di moda' — la metto solo dove ha senso economico",
 ];
 
 const dos = [
-    "Decido priorità quando tutto sembra urgente",
-    "Smonto sistemi che non stanno in piedi prima che collassino",
-    "Riduco errori prima che diventino costosi",
+    "Decido le priorità quando tutto sembra urgente (spoiler: non lo è quasi mai)",
+    "Smonto i sistemi che non stanno in piedi prima che ti collassino addosso",
+    "Riduco gli errori prima che diventino costosi (un errore preso al volo costa 100€, lo stesso errore tra 6 mesi costa 100.000€)",
     "Uso l'AI come leva strategica, non come giocattolo",
-    "Mi prendo la responsabilità del risultato, non solo del processo",
+    "Mi prendo la responsabilità del RISULTATO, non del processo",
 ];
 
 export default function CosaFaccio() {
@@ -36,7 +36,7 @@ export default function CosaFaccio() {
                 >
                     Quello che <span className="text-accent-1">faccio</span>
                     <br />
-                    <span className="text-outline">(e quello che no)</span>
+                    <span className="text-outline">(e quello che NO)</span>
                 </motion.h2>
             </div>
 

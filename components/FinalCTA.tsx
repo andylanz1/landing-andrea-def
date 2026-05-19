@@ -30,8 +30,9 @@ export default function FinalCTA() {
                         className="font-heading uppercase leading-[0.98] tracking-tighter"
                         style={{ fontSize: "clamp(32px, 5vw, 64px)" }}
                     >
-                        &ldquo;Non vendo idee.<br />
-                        Vendo <span className="text-accent-1">decisioni</span>.&rdquo;
+                        &ldquo;L'AI accelera tutto.<br />
+                        Anche gli errori.<br />
+                        Io servo a <span className="text-accent-1">evitarli</span>.&rdquo;
                     </h2>
 
                     <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between gap-6 flex-wrap">
@@ -59,8 +60,9 @@ export default function FinalCTA() {
                 </motion.div>
 
                 <p className="mt-8 text-center text-text-secondary text-sm leading-[1.6] max-w-2xl mx-auto">
-                    Non compila il form chi non ha un problema reale. Scrivimi solo se
-                    il contesto è incasinato e le decisioni contano.
+                    Non compilare il form se non hai un problema reale. Scrivimi SOLO se
+                    il contesto è incasinato e le decisioni contano davvero qualcosa per
+                    il tuo business. Altrimenti ci perdiamo il tempo entrambi.
                 </p>
             </div>
         </section>

@@ -9,6 +9,7 @@ import Process from "@/components/Process";
 import FinalCTA from "@/components/FinalCTA";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import Marquee from "@/components/effects/Marquee";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <ValueProp />
       <ComeUsoAI />
       <LaMiaStoria />
+      <Marquee />
       <Target />
       <Process />
       <FinalCTA />

@@ -4,9 +4,9 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const timeline: Array<[string, string]> = [
-    ["2007", "Olisticzone"],
-    ["2010", "Crisi · pivot"],
-    ["2012", "+30% revenue"],
+    ["2007", "Apro Olisticzone"],
+    ["2010", "La CRISI"],
+    ["2011", "+30% in pochi mesi"],
     ["2024", "AI come leva"],
 ];
 
@@ -33,7 +33,7 @@ export default function LaMiaStoria() {
                             2007. Apro<br />Olisticzone.
                         </motion.h2>
                         <div className="font-mono text-xs tracking-[0.14em] uppercase text-white/40">
-                            Centro fitness · Milano
+                            Centro fitness + spa · 1000 mq · Milano
                         </div>
                     </div>
 
@@ -44,21 +44,25 @@ export default function LaMiaStoria() {
                         className="flex flex-col gap-7"
                     >
                         <p className="text-white text-xl md:text-[22px] leading-[1.55]">
-                            Tre anni dopo, crisi. Non quella sui giornali — la mia. Conti
-                            che non tornano, scelte sbagliate, energia finita.
+                            Tre anni dopo, arrivano i big player: Virgin Active, McFit,
+                            Hello Fit. Budget marketing 100 volte il mio. Conti in rosso,
+                            notti insonni, soci che ti guardano storto.
                         </p>
                         <p className="text-text-secondary text-lg md:text-[19px] leading-[1.65]">
-                            Decido di smontare tutto: cosa funziona, cosa no, cosa va
-                            eliminato. Imparo web marketing prima che esistano gli
-                            &ldquo;esperti&rdquo;. Riapro con metodo.{" "}
-                            <span className="text-white">+30% in 18 mesi.</span>
+                            Smetto di copiare i grandi. Cambio approccio COMPLETAMENTE.
+                            Studio web marketing notte e giorno (e ti assicuro che nel
+                            2011 in Italia non c'era praticamente NESSUNO a insegnartelo
+                            per bene).{" "}
+                            <span className="text-white">+30% in pochi mesi.</span> Centro
+                            ancora aperto 15 anni dopo.
                         </p>
                         <p className="text-text-secondary text-lg md:text-[19px] leading-[1.65]">
                             Da allora aiuto imprenditori a fare la stessa cosa: capire
-                            dove sono, decidere dove andare, smettere di disperdere
-                            energia. Non sono un guru.{" "}
+                            dove sono, decidere dove andare, smettere di sprecare energia.
+                            Non sono un teorico.{" "}
                             <span className="text-accent-1">
-                                Sono uno che ha sbagliato e ha capito
+                                Sono un imprenditore che ha vissuto la crisi vera e sa
+                                cosa significa DECIDERE quando tutto è incerto
                             </span>
                             .
                         </p>

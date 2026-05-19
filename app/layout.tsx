@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Oswald, Archivo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import IubendaScripts from "@/components/IubendaScripts";
+import CursorGlow from "@/components/effects/CursorGlow";
+import NoiseOverlay from "@/components/effects/NoiseOverlay";
+import ScrollProgress from "@/components/effects/ScrollProgress";
 
 const oswald = Oswald({
   variable: "--font-anton",
@@ -35,6 +38,9 @@ export default function RootLayout({
         className={`${oswald.variable} ${archivo.variable} ${jetbrainsMono.variable} antialiased bg-black text-white font-sans`}
       >
         <IubendaScripts />
+        <ScrollProgress />
+        <CursorGlow />
+        <NoiseOverlay />
         {children}
       </body>
     </html>

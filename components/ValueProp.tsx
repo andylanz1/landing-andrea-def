@@ -8,7 +8,7 @@ const pillars = [
         n: "01",
         label: "AI propone",
         title: "Mappo. Estraggo. Riduco.",
-        copy: "L'AI processa volumi che un umano non vede: documenti, dati, conversazioni. Output: opzioni reali, non slide motivazionali.",
+        copy: "L'AI macina volumi che un umano non vede: documenti, dati, conversazioni. Output: opzioni reali, non slide motivazionali da LinkedIn.",
     },
     {
         n: "02",
@@ -20,7 +20,7 @@ const pillars = [
         n: "03",
         label: "Risultati misurabili",
         title: "Numeri, non promesse.",
-        copy: "Ogni intervento ha metriche definite a inizio mandato. Se a 90 giorni non ci siamo, lo dico io per primo.",
+        copy: "Ogni intervento ha metriche definite a inizio mandato. Se a 90 giorni non ci siamo, lo dico io per primo. Niente fuffa.",
     },
 ];
 
